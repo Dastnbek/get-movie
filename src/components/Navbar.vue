@@ -37,6 +37,13 @@
 
 .navItems {
     margin-right: 10px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    transition: border 1s;
+}
+
+.navItems:hover {
+    border: 1px solid lightblue;
 }
 
 .routerLink{

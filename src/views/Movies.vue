@@ -81,4 +81,7 @@ export default {
 .row{
     flex-wrap: nowrap;
 }
+.card{
+    box-shadow: 0px 5px 2px 2px;
+}
 </style>

@@ -55,7 +55,10 @@ export default {
         //up coming
         axios
         .get("https://api.themoviedb.org/3/movie/upcoming?api_key=06aa50e38281dd9b38543df33f8bab2c&language=en-US&page=1")
-        .then(response => this.upComing = response.data.results)
+        .then(response => {
+            this.upComing = response.data.results
+            this.$store.dispatch('addNewMovies', response.data.results); 
+        })
         //popular
         axios
         .get("https://api.themoviedb.org/3/movie/popular?api_key=06aa50e38281dd9b38543df33f8bab2c&language=en-US&page=1")
@@ -90,8 +93,14 @@ export default {
 }
 .card{
     box-shadow: 0px 5px 2px 2px;
+    transition: box-shadow 0.5s;
     cursor: pointer;
 }
+
+.card:hover{
+    box-shadow: 0px 5px 2px 2px burlywood;
+}
+
 .routerLink{
     color: black;
 }

@@ -1,26 +1,26 @@
 <template>
-    <b-container>
-
+    <b-container >
+        <h2> Top Rated </h2>
         <b-row id="myRow" >
-            <b-col cols="3" v-for="item in topRated" >
-                <b-card v-bind:class="[myCardImageClass]" :img-src="'https://image.tmdb.org/t/p/w300/' + item.poster_path" img-alt="Card image" img-left class="mb-3">
-                    <b-card-text>
-                        {{ item.original_title }}
-                    </b-card-text>
-                </b-card>
+            <b-col cols="3" v-for="movie in topRated">
+                <MovieCard :movie='movie' />
             </b-col>
         </b-row>
     </b-container>
-
 </template>
 
 <script>
 import axios from 'axios';
+import MovieCard from '../components/MovieCard'
+
 export default {
     data(){
         return { 
             topRated : []
         }
+    },
+    components : {
+        MovieCard
     },
     mounted() {
         axios
@@ -34,10 +34,6 @@ export default {
 #myRow{
     width:100% ;
     overflow-x: scroll ;
-}
-
-.card-img-left{
-    height: 150px;
 }
 
 .row{

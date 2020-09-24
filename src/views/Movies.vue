@@ -5,7 +5,9 @@
         </div>
         <b-row id="myRow" >
             <b-col cols="3" v-for="movie in upComing">
-                <MovieCard :movie='movie' />
+                <router-link :class="[routerLink]" :to="`/movie/new/${movie.id}`" >
+                    <MovieCard :movie='movie' />
+                </router-link>
             </b-col>
         </b-row>
         <div :class="[movieTypeCon]" > 
@@ -13,7 +15,9 @@
         </div>
         <b-row id="myRow" >
             <b-col cols="3" v-for="movie in popular">
-                <MovieCard :movie='movie' />
+                <router-link :class="[routerLink]" :to="`/movie/popular/${movie.id}`" >
+                    <MovieCard :movie='movie' />
+                </router-link>
             </b-col>
         </b-row>
         <div :class="[movieTypeCon]" > 
@@ -21,7 +25,9 @@
         </div>
         <b-row id="myRow" >
             <b-col cols="3" v-for="movie in topRated">
-                <MovieCard :movie='movie' />
+                <router-link :class="[routerLink]" :to="`/movie/top/${movie.id}`" >
+                    <MovieCard :movie='movie' />
+                </router-link>
             </b-col>
         </b-row>
     </b-container>
@@ -38,7 +44,8 @@ export default {
             popular : [],
             topRated : [],
             movieType : "movieType",
-            movieTypeCon : "movieTypeCon"
+            movieTypeCon : "movieTypeCon",
+            routerLink : "routerLink"
         }
     },
     components : {
@@ -83,5 +90,14 @@ export default {
 }
 .card{
     box-shadow: 0px 5px 2px 2px;
+    cursor: pointer;
 }
+.routerLink{
+    color: black;
+}
+
+.routerLink:hover{
+    text-decoration: none;
+}
+
 </style>

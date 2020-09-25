@@ -25,7 +25,7 @@
         </div>
         <b-row id="myRow" >
             <b-col cols="3" v-for="(movie, index) in topRated" :key="`top+${index}`" >
-                <router-link :class="[routerLink]" :to="`/movie/top/${movie.id}`" >
+                <router-link :class="[routerLink]" :to="`/movie/top/${index}`" >
                     <MovieCard :movie='movie' />
                 </router-link>
             </b-col>
@@ -69,7 +69,10 @@ export default {
         //top rated
         axios
         .get('https://api.themoviedb.org/3/movie/top_rated?api_key=06aa50e38281dd9b38543df33f8bab2c&language=en-US&page=1')
-        .then(respons => this.topRated = respons.data.results)
+        .then(respons => {
+            this.topRated = respons.data.results;
+            this.$store.dispatch('addTopMovies', respons.data.results);
+        })
     }
 }
 </script>

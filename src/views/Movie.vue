@@ -20,7 +20,8 @@ export default {
     computed: {
         ...mapState([
           'newMovies',
-          'popularMovies'
+          'popularMovies',
+          'topMovies'
         ])
     },
     methods: {
@@ -29,6 +30,8 @@ export default {
                 return this.newMovies[this.$route.params.id]
             }else if(this.$route.params.type === 'popular'){
                 return this.popularMovies[this.$route.params.id]
+            }else if(this.$route.params.type === 'top'){
+                return this.topMovies[this.$route.params.id]
             }
         }
     }

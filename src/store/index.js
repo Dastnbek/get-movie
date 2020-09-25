@@ -15,6 +15,9 @@ export default new Vuex.Store({
     },
     mutatePopularMovies(state, popularMovies){
         state.popularMovies = popularMovies;
+    },
+    mutateTopMovies(state, topMovies){
+        state.topMovies = topMovies
     }
   },
   actions: {
@@ -23,6 +26,9 @@ export default new Vuex.Store({
     },
     addPopularMovies({commit}, movies){
         commit('mutatePopularMovies', movies)
+    },
+    addTopMovies({commit}, movies){
+        commit('mutateTopMovies', movies)
     }
   },
   modules: {

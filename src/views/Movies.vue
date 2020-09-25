@@ -4,8 +4,8 @@
           <span :class="[movieType]">New</span>     
         </div>
         <b-row id="myRow" >
-            <b-col cols="3" v-for="movie in upComing">
-                <router-link :class="[routerLink]" :to="`/movie/new/${movie.id}`" >
+            <b-col cols="3" v-for="(movie, index) in upComing" :key="`movie+ ${index}`" >
+                <router-link :class="[routerLink]" :to="`/movie/new/${index}`" >
                     <MovieCard :movie='movie' />
                 </router-link>
             </b-col>

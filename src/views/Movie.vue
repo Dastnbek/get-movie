@@ -7,6 +7,7 @@
 <script>
 import { mapState } from 'vuex'
 import MovieBigCard  from '../components/MovieBigCard'
+
 export default {
     data(){
         return{
@@ -19,11 +20,16 @@ export default {
     computed: {
         ...mapState([
           'newMovies',
+          'popularMovies'
         ])
     },
     methods: {
         movie(){
-            return this.newMovies[this.$route.params.id]
+            if (this.$route.params.type === 'new') {
+                return this.newMovies[this.$route.params.id]
+            }else if(this.$route.params.type === 'popular'){
+                return this.popularMovies[this.$route.params.id]
+            }
         }
     }
 }

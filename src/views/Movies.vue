@@ -14,8 +14,8 @@
           <span :class="[movieType]">Popular</span>     
         </div>
         <b-row id="myRow" >
-            <b-col cols="3" v-for="movie in popular">
-                <router-link :class="[routerLink]" :to="`/movie/popular/${movie.id}`" >
+            <b-col cols="3" v-for="(movie, index) in popular" :key="`popular+${index}`">
+                <router-link :class="[routerLink]" :to="`/movie/popular/${index}`" >
                     <MovieCard :movie='movie' />
                 </router-link>
             </b-col>
@@ -24,7 +24,7 @@
           <span :class="[movieType]">Top Rated</span>     
         </div>
         <b-row id="myRow" >
-            <b-col cols="3" v-for="movie in topRated">
+            <b-col cols="3" v-for="(movie, index) in topRated" :key="`top+${index}`" >
                 <router-link :class="[routerLink]" :to="`/movie/top/${movie.id}`" >
                     <MovieCard :movie='movie' />
                 </router-link>
@@ -62,7 +62,10 @@ export default {
         //popular
         axios
         .get("https://api.themoviedb.org/3/movie/popular?api_key=06aa50e38281dd9b38543df33f8bab2c&language=en-US&page=1")
-        .then(response => this.popular = response.data.results)
+        .then(response => {
+            this.popular = response.data.results;
+            this.$store.dispatch('addPopularMovies', response.data.results)
+        })
         //top rated
         axios
         .get('https://api.themoviedb.org/3/movie/top_rated?api_key=06aa50e38281dd9b38543df33f8bab2c&language=en-US&page=1')

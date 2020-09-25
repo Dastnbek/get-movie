@@ -5,9 +5,19 @@
                 <b-img :src="'https://image.tmdb.org/t/p/w300/'+imageLink" alt="Image 1"></b-img>
             </b-col>
             <b-col cols="9">
-                <div :class="[wrapper]" ></div>
+                <div :class="[wrapper]" >
+                    <div :class="bigCardTitleContainer" >
+                        <span>
+                            {{ title }}
+                        </span>
+                    </div>
+                    <div :class="bigCardOverviewContainer" >
+                        <span>
+                            {{ overview }} 
+                        </span>
+                    </div>
+                </div>
                 <div :style="{ backgroundImage: 'url('+backImage+')' }" :class="[bigCardContent]" >
-                    {{ title }}
                 </div>
             </b-col>
         </b-row>
@@ -19,10 +29,12 @@ export default {
     data(){
         return {
             bigCardContent: 'bigCardContent',
-            wrapper: 'wrapper'
+            wrapper: 'wrapper',
+            bigCardTitleContainer: 'bigCardTitleContainer',
+            bigCardOverviewContainer: "bigCardOverviewContainer"
         }
     },
-    props: ['imageLink', 'title', 'backImage']
+    props: ['imageLink', 'title', 'backImage', 'overview']
 }
 </script>
 
@@ -46,5 +58,16 @@ export default {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    .bigCardTitleContainer{
+        font-size: 40px;
+        margin: 40px 0 0 40px;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .bigCardOverviewContainer{
+        margin: 40px;
+        color: white;
+        font-size: 20px;
     }
 </style>

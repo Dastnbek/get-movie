@@ -1,6 +1,6 @@
 <template>
     <div :class="[bigCardContainer]" >
-        <MovieBigCard :overview="movie().overview" :imageLink="movie().poster_path" :backImage="'https://image.tmdb.org/t/p/w500/'+movie().backdrop_path" :title="movie().title" />
+        <MovieBigCard :id="movie().id" :overview="movie().overview" :imageLink="movie().poster_path" :backImage="'https://image.tmdb.org/t/p/w500/'+movie().backdrop_path" :title="movie().title" />
     </div>
 </template>
 

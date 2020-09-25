@@ -13,9 +13,6 @@
                         <router-link class="routerLink" to="/movies">Movies</router-link>
                     </b-nav-item>
                     <b-nav-item class="navItems" href="#">
-                        <router-link class="routerLink" to="/tvshows">TV shows</router-link>
-                    </b-nav-item>
-                    <b-nav-item class="navItems" href="#">
                         <router-link class="routerLink" to="/actors">Actors</router-link>
                     </b-nav-item>
                 </b-navbar-nav>

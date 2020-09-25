@@ -15,11 +15,6 @@ const routes = [
     component: () => import('../views/Movies.vue')
   },
   {
-    path: '/tvshows',
-    name: 'TVshows',
-    component: () => import('../views/Tvshows.vue')
-  },
-  {
     path: '/actors',
     name: 'Actors',
     component: () => import('../views/Actors.vue')

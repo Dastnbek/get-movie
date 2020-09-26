@@ -45,8 +45,9 @@ export default {
 }
 
 .title{
-    font-size: 11px;
+    font-size: 15px;
     font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
 .infoContainer{
     font-size: 11px;

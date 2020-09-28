@@ -1,19 +1,16 @@
-# get-movie
+|The Movie DB API
+|-------------------------------------------------
 
-## Project setup
-```
-npm install
-```
+## Technologies
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- Vue js
+- Vue-Router
+- Vuex
+- Javascript
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Plugins
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- axios
+- bootstrap-vue
+
+## Delpoyed to [Netlify](https://get-movie-vue.netlify.app/movies)

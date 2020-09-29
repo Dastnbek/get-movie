@@ -13,4 +13,4 @@
 - axios
 - bootstrap-vue
 
-## Delpoyed to [Netlify](https://get-movie-vue.netlify.app/movies)
+## Delpoyed to [Netlify](https://get-movie-vue.netlify.app)
